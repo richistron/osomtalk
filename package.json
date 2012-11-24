@@ -7,7 +7,8 @@
   },
   "dependencies": {
     "express": "3.0.3",
-    "jade": "*",
+    "consolidate" : "*",
+    "jqtpl": ">= 0.0.0",
     "less-middleware": "*",
     "faye": "*"
   }

@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>${title}</title>
+		<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<script type="text/javascript" src="/js/faye-browser-min.js"></script>
+		<script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				/*world = new World();
+			    world.setupCanvas();
+			    world.updateWorldData();*/
+			    console.log("loooool");
+				window.client = new Faye.Client('http://192.168.15.66:8000/faye');
+				
+				window.client.subscribe('/messages', function(message) {
+  					alert('Got a message: ' + message.text);
+				});
+
+			});
+			
+			function joinGame() {
+				console.log("aaaaaaaaaaaaah");
+  				window.client.publish('/messages', {
+  					text: 'Hello world'
+				});
+  			}
+		</script>
+
+	</head>	
+	<body>
+		<div>
+			<h1>${title}</h1>
+			<p>Welcome to ${title}</p>
+			<a href="#" onclick="joinGame()" />Send Message</a>
+		</div>
+	</body>
+</html>
