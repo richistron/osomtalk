@@ -4,6 +4,7 @@
 
 var express = require('express')
   , routes  = require('./routes')
+  , rooms  = require('./rooms')
   , user    = require('./routes/user')
   , http    = require('http')
   , path    = require('path')
@@ -39,8 +40,11 @@ app.configure('development', function(){
 
 
 
-
+/** Routes **/
 app.get('/', routes.index);
+app.put('/room/new', rooms.new);
+app.get('/room/:id', rooms.view);
+
 app.get('/users', user.list);
 
 server.listen(8000);

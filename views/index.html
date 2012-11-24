@@ -1,99 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-	<title>${title}</title>
+<head>
+	<title>OsomTalk</title>
+
+	<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function() {
+  			// Handler for .ready() called.
+		});
+		function openChatCreationDialog() {
+
+		};
+    </script>
 	
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
-    
+
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<style>
+	body {
+		padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+	}
+	</style>
+	
+	
 	<link href="/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-	
+
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    
-    <!-- Fav and touch icons -->
-    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+      <![endif]-->
+
+      <!-- Fav and touch icons -->
+      <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+      <style type="text/css">
+      body {
+      	padding-top: 20px;
+      	padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+      	margin: 0 auto;
+      	max-width: 700px;
+      }
+      .container-narrow > hr {
+      	margin: 10px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+      	margin: 60px 0;
+      	text-align: center;
+      }
+      .jumbotron h1 {
+      	font-size: 72px;
+      	line-height: 1;
+      }
+      /*.jumbotron .btn {
+      	font-size: 21px;
+      	padding: 14px 24px;
+      	}*/
+
+      	/* Supporting marketing content */
+      	.marketing {
+      		margin: 60px 0;
+      	}
+      	.marketing p + h4 {
+      		margin-top: 10px;
+      	}
+      	.footer {
+      		text-align: center;
+      	}
+      	</style>
+      </head>	
+      <body>
+      	<div class="container">
+      		<div class="navbar navbar-inverse navbar-fixed-top">
+      			<div class="navbar-inner">
+      				<div class="container">
+      					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+      						<span class="icon-bar"></span>
+      						<span class="icon-bar"></span>
+      						<span class="icon-bar"></span>
+      					</a>
+      					<a class="brand" href="#">OsomTalk</a>
+      					<div class="nav-collapse collapse">
+      						<ul class="nav">
+      							<li class="active"><a href="#">Home</a></li>
+      							<li><a href="#about">About</a></li>
+      							<li><a href="#contact">Contact</a></li>
+      						</ul>
+      					</div><!--/.nav-collapse -->
+      				</div>
+      			</div>
+      		</div>
+
+      		<div class="jumbotron">
+      			<!--<h1>OsomTalk</h1>-->
+      			<img src="/img/osom.png"/>
+      			<p class="lead">
+      				An awesome chat site for your awesome team, event or LOL eaters.<br/>
+      				No XMMP, No IRC, Just a couple of clicks and you got your very own personal Twitter TimeLine.
+      			</p>
+      			
+      			<a href="#newChatModal" role="button" class="btn btn-large btn-success" data-toggle="modal">Start a New Chat!</a>
+
+      			<!--<p class="lead">If you are interested in it, <strong>please leave us your email</strong> and we'll mail you back whenever we got our first beta release.</p>
+
+      			<form action="http://osomtalk.us4.list-manage1.com/subscribe/post?u=83b1936472fd3b882ee3637ee&amp;id=11fb290a01" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate class="signup">
+      				<input type="email" value="" name="EMAIL" class="email input-large" id="mce-EMAIL" placeholder="email address" required>
+
+      				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-success">
+      			</form>-->
 
 
-    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function(){
-			    window.client = new Faye.Client('http://192.168.15.66:8000/faye');
+      		</div>
 
-			    window.client.subscribe('/messages', function(message) {
-			    	$('#messages').prepend('<div>'+message.text+'</div>');
-			    });
+      		<hr>
 
-			});
+      		<div class="row-fluid marketing">
+      			<div class="span6">
+      				<h3>For Users</h3>
+      				<h4>Fast</h4>
+      				<p>Start a chat room for your team or event with a couple of clicks.</p>
 
-	function joinGame() {
-		window.client.publish('/messages', {
-			text: $('#message_input').val()
-		});
-		$('#message_input').val('');
-		$('#message_input').focus();
-	}
-	</script>
+      				<h4>Secure</h4>
+      				<p>Private rooms that can only be accessed by the invited ones.</p>
 
-</head>	
-<body>
-	<div class="container">
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</a>
-					<a class="brand" href="#">OsomTalk</a>
-					<div class="nav-collapse collapse">
-						<ul class="nav">
-							<li class="active"><a href="#">Home</a></li>
-							<li><a href="#about">About</a></li>
-							<li><a href="#contact">Contact</a></li>
-						</ul>
-					</div><!--/.nav-collapse -->
-				</div>
-			</div>
-		</div>
-	
+      				<h4>No Hassle</h4>
+      				<p>No need to login unless you are entering a private chat.</p>
 
-	
-		<div class="page-header">
-			<h1>OsomTalk <small>An awesome chat site for your awesome team, event or LOL eaters.</small></h1>
-		</div>
-	
-		<div class="row-fluid">
-			
-			<div class="span4">
-				<textarea name="message_input" id="message_input" placeholder="Write Your Message"></textarea>
-				<br/>
-				<a href="#" onclick="joinGame()" class="btn btn-primary btn-large">
-		      		Send Message
-		    	</a>
-			</div> 
-			
-			<div class="span8">
-				<h2>Messages</h2>
-				<div id="messages">
+      				<h4>Fun</h4>
+      				<p>Preview of images, videos and most of all, GIFS! <span class="mutted">(We love GIFS and we know you do too)</span>.</p>
+      			</div>
 
-				</div>
-			</div>
-		
-		</div>
-	
-	</div><!--Container -->
-	<script type="text/javascript" src="/js/faye-browser-min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-</body>
-</html>
+      			<div class="span6">
+      				<h3>For Enterprises</h3>
+      				<h4>Secure</h4>
+      				<p>Access can be limited to users with your company's email accounts.</p>
+
+      				<h4>Flexible</h4>
+      				<p>Employees can create their own private rooms for self organization.</p>
+
+      				<h4>Productive</h4>
+      				<p>Share documents easily among employees.</p>
+      			</div>
+      		</div>
+      		<hr/>
+      		<div class="row footer">
+      			OsomTalk is an <a href="http://www.gnu.org/philosophy/free-sw.html" title="FreeSoftware Fundation">FreeSoftware</a> project availabe as <a href="http://en.wikipedia.org/wiki/Software_as_a_service" title="Wikipedia's definition">SaaS</a> made at <a href="http://hackergarage.mx/" title="HackerGarage Home Page">HackerGarage</a>.<br/>
+
+      			<a href="https://github.com/hackergarage/osomtalk" title="OsomTalk Code Repository">Get The Source!</a>
+      		</div>
+      	</div><!--Container -->
+
+
+<!-- Modal -->
+<div id="newChatModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn btn-primary">Save changes</button>
+  </div>
+</div>
+
+      	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+      </body>
+      </html>
