@@ -50,7 +50,7 @@ app.use(server);
 client = new faye.Client('http://localhost:8000/faye');
         
 client.subscribe('/messages', function(message) {
-  console.log('Got a message: ' + message.text);
+  //console.log('Got a message: ' + message.text);
 });
 
 http.createServer(app).listen(app.get('port'), function(){
